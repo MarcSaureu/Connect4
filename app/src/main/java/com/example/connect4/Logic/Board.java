@@ -27,7 +27,7 @@ public class Board {
         return cells;
     }
 
-    Position occupyCell (int column, Player player) {
+    public Position occupyCell (int column, Player player) {
         if (canPlayCol(column)){
             int row = firstEmptyRow(column);
             this.cells[row][column] = new Cell(player);
@@ -36,7 +36,7 @@ public class Board {
         return null;
     }
 
-    boolean hasValidMoves() {
+    public boolean hasValidMoves() {
         for(int i=0; i < this.size; i++){
             if (canPlayCol(i)){
                 return true;
@@ -58,7 +58,7 @@ public class Board {
         return col < this.size && col >= 0 && canplay;
     }
 
-    int firstEmptyRow(int column) {
+    public int firstEmptyRow(int column) {
         for (int i = 0 ; i <= this.size && canPlayCol(column); i++) {
             if (this.cells[i][column].isEmpty()){
                 return i;
@@ -67,7 +67,7 @@ public class Board {
         return -1;
     }
 
-    int maxConnected(Position position) {
+    public int maxConnected(Position position) {
         if (!cells[position.getRow()][position.getColumn()].isEmpty()) {
             int max = 0;
             for (int i = 0; i < Direction.ALL.length; i++) {
