@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         help.setOnClickListener(this);
         start.setOnClickListener(this);
+        exit.setOnClickListener(this);
     }
 
     @Override
@@ -33,9 +34,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.start_button:
                 Intent intent1 = new Intent(MainActivity.this, ConfigActivity.class);
                 startActivity(intent1);
+                finish();
                 break;
 
             case R.id.exit_button:
+                finish();
                 break;
         }
     }

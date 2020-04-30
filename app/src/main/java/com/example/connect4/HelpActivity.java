@@ -1,11 +1,12 @@
 package com.example.connect4;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HelpActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class HelpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

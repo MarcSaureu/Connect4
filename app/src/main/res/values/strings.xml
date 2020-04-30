@@ -19,7 +19,17 @@
     <string name="Control">Control de temps</string>
     <string name="Graella">Mida Graella</string>
     <string name="estrella">Estrella</string>
-    <string name="Graella_7">Mida 7</string>
-    <string name="Graella_6">Mida 6</string>
-    <string name="Graella_5">Mida 5</string>
+    <string name="Graella_7">7</string>
+    <string name="Graella_6">6</string>
+    <string name="Graella_5">5</string>
+    <string name="aliaskey">aliaskey</string>
+    <string name="graellakey">graellakey</string>
+    <string name="tempskey">tempskey</string>
+    <string name="Resultats">Resultats Partida</string>
+    <string name="Dia_hora">Dia i hora</string>
+    <string name="Log_values">Valors del Log</string>
+    <string name="email">E-mail destinatari</string>
+    <string name="Email_hint">usuari@gmail.com</string>
+    <string name="Enviar_email">Enviar e-mail</string>
+    <string name="Nova_Partida">Nova Partida</string>
 </resources>
