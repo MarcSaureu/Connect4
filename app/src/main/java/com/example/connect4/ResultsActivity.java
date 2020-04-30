@@ -26,6 +26,9 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         Button restart = findViewById(R.id.Nova_Partida);
         Button exit2 = findViewById(R.id.exit_button2);
 
+        Intent intent = getIntent();
+        log.setText(intent.getStringExtra("aliaskey")+" Mida Graella: ");
+        log.append((intent.getIntExtra("midakey",-1))+ " "+ intent.getStringExtra("statuskey"));
         date.setText(new Date().toString());
         email.requestFocus();
 
