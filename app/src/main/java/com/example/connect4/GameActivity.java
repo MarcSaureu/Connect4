@@ -31,7 +31,7 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
         TextView text = findViewById(R.id.clock);
 
         Intent intent = getIntent();
-        size = intent.getIntExtra("graellakey", -1);
+        size = intent.getIntExtra("graellakey", 7);
         time = intent.getBooleanExtra("tempskey", false);
         data.putInt("midakey", size);
         data.putString("aliaskey", intent.getStringExtra("aliaskey"));

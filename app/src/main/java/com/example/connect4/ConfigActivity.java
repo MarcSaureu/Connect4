@@ -31,10 +31,15 @@ public class ConfigActivity extends AppCompatActivity {
                 int selected = graella.getCheckedRadioButtonId();
                 RadioButton radioButton = findViewById(selected);
 
+
                 Bundle data = new Bundle();
 
                 data.putString(getString(R.string.aliaskey), alias.getText().toString());
-                data.putInt(getString(R.string.graellakey), Integer.parseInt(radioButton.getText().toString()));
+                if(selected == -1){
+                    data.putInt("graellakey", 7);
+                }else{
+                    data.putInt(getString(R.string.graellakey), Integer.parseInt(radioButton.getText().toString()));
+                }
                 data.putBoolean(getString(R.string.tempskey), temps.isChecked());
 
                 Intent intent = new Intent (ConfigActivity.this,GameActivity.class);
