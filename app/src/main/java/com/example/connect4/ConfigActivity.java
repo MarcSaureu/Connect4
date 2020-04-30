@@ -37,7 +37,7 @@ public class ConfigActivity extends AppCompatActivity {
                 data.putInt(getString(R.string.graellakey), Integer.parseInt(radioButton.getText().toString()));
                 data.putBoolean(getString(R.string.tempskey), temps.isChecked());
 
-                Intent intent = new Intent (ConfigActivity.this,ResultsActivity.class);
+                Intent intent = new Intent (ConfigActivity.this,GameActivity.class);
                 intent.putExtras(data);
                 startActivity(intent);
                 finish();
