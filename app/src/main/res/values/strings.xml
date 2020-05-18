@@ -32,4 +32,5 @@
     <string name="Email_hint">usuari@gmail.com</string>
     <string name="Enviar_email">Enviar e-mail</string>
     <string name="Nova_Partida">Nova Partida</string>
+    <string name="AliasLog">Alias :  </string>
 </resources>
