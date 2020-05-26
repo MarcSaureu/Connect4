@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
+            android:layout_height="150dp"
             android:contentDescription="@string/Principal"
             android:src="@mipmap/ic_launcher" />
 
@@ -27,7 +27,7 @@
             android:id="@+id/help_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/rounded_button"
             android:elevation="10dp"
             android:text="@string/ajuda" />
@@ -36,16 +36,25 @@
             android:id="@+id/start_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/rounded_button"
             android:elevation="10dp"
             android:text="@string/Començar_Partida" />
 
         <Button
+            android:id="@+id/database_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:elevation="10dp"
+            android:text="@string/Database" />
+
+        <Button
             android:id="@+id/exit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/rounded_button"
             android:elevation="10dp"
             android:text="@string/Sortir" />

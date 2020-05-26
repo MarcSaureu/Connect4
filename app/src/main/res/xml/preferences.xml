@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="P1"
+        android:key="@string/Alias"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/Alias"
+        android:summary="@string/Alias_info"
+        android:maxLength="15"
+        />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/Control"
+        android:title="@string/Control"
+        android:summary="@string/Time_info"
+        />
+    <ListPreference
+        android:key="@string/Graella"
+        android:title="@string/Graella"
+        android:defaultValue="7"
+        android:entries="@array/size_array"
+        android:entryValues="@array/size_values_array"
+        android:summary="@string/Info_Graella"
+        />
+
+</PreferenceScreen>

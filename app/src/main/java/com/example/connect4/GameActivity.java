@@ -2,6 +2,8 @@ package com.example.connect4;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.AdapterView;
@@ -30,9 +32,11 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_game);
         TextView text = findViewById(R.id.clock);
 
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
         Intent intent = getIntent();
-        size = intent.getIntExtra("graellakey", 7);
-        time = intent.getBooleanExtra("tempskey", false);
+        time = mySharedPreferences.getBoolean(getString(R.string.Control), false);
+        size = Integer.parseInt(mySharedPreferences.getString(getString(R.string.Graella), "7"));
         data.putInt("midakey", size);
         data.putString("aliaskey", intent.getStringExtra("aliaskey"));
 

@@ -18,11 +18,11 @@
         </activity>
         <activity android:name=".HelpActivity">
         </activity>
-        <activity android:name=".ConfigActivity">
-        </activity>
         <activity android:name=".ResultsActivity">
         </activity>
         <activity android:name=".GameActivity">
+        </activity>
+        <activity android:name=".Preferences.PreferencesActivity">
         </activity>
     </application>
 
