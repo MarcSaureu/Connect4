@@ -4,10 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
 public class PartidaSQLiteHelper extends SQLiteOpenHelper {
-    String sqlCreate = "CREATE TABLE Partidas " +
+    String sqlCreate = "CREATE TABLE Partides " +
             "(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "alias TEXT, " +
             "date TEXT, " +
@@ -16,7 +15,7 @@ public class PartidaSQLiteHelper extends SQLiteOpenHelper {
             "usedTime INTEGER, " +
             "result TEXT)";
 
-    public PartidaSQLiteHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public PartidaSQLiteHelper(Context context,String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -27,7 +26,7 @@ public class PartidaSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Partidas");
+        db.execSQL("DROP TABLE IF EXISTS Partides");
         db.execSQL(sqlCreate);
     }
 }

@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".Preferences.PreferencesActivity">
         </activity>
+        <activity android:name=".Old.OldActivity">
+        </activity>
     </application>
 
 </manifest>

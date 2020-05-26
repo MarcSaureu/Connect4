@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.connect4.Old.OldActivity;
 import com.example.connect4.Preferences.PreferencesActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.database_button:
+                Intent intent2 = new Intent(MainActivity.this, OldActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

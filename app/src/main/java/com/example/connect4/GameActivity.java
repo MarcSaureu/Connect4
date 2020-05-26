@@ -30,6 +30,7 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        getSupportActionBar().hide();
         TextView text = findViewById(R.id.clock);
 
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);

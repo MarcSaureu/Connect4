@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <fragment
+        class="com.example.connect4.Old.FragmentList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/FrgListOLD"
+        tools:layout="@layout/fragment_list_old"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:id="@+id/BackButton2"
+        android:text="@string/Anar_Al_Joc"/>
+
+</LinearLayout>

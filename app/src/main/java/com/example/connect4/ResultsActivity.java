@@ -1,7 +1,9 @@
 package com.example.connect4;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -14,9 +16,12 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.connect4.DDBB.PartidaSQLiteHelper;
 import com.example.connect4.Preferences.PreferencesActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class ResultsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,33 +38,57 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         Button restart = findViewById(R.id.Nova_Partida);
         Button exit2 = findViewById(R.id.exit_button2);
 
+        sendEmail.setOnClickListener(this);
+        exit2.setOnClickListener(this);
+        restart.setOnClickListener(this);
+
+        //Valors del Intent
         Intent intent = getIntent();
-        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-
-        String Alias = mySharedPreferences.getString(getString(R.string.Alias), "P1");
-        String Size = mySharedPreferences.getString(getString(R.string.Graella), "7");
         String Status = intent.getStringExtra("statuskey");
 
 
-        date.setText(new Date().toString());
+        //Valors de la SharedPreferences
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String Alias = mySharedPreferences.getString(getString(R.string.Alias), "P1");
+        String Size = mySharedPreferences.getString(getString(R.string.Graella), "7");
+        boolean timeControl = mySharedPreferences.getBoolean(getString(R.string.Control),false);
+
+        Date dat = new Date();
+
+        date.setText(dat.toString());
 
         String Log = BuildLog(Alias, Size, Status);
         email.requestFocus();
 
         log.setText(Log);
 
+        //Base de Dades
+        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
+        SQLiteDatabase db = ddbb.getWritableDatabase();
+        if(db != null){
+            insertDB(db,Alias, Size, Status, dat, timeControl);
+        }
+        db.close();
 
-        sendEmail.setOnClickListener(this);
-        exit2.setOnClickListener(this);
-        restart.setOnClickListener(this);
+    }
 
+    private void insertDB(SQLiteDatabase db, String alias, String size, String status, Date dat, boolean timeControl) {
+        ContentValues newRegister = new ContentValues();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("es", "ES"));
 
+        newRegister.put("alias", alias); //Afegim Alias
+        newRegister.put("date", dateFormat.format(dat));//Afegim Data
+        newRegister.put("grillSize", size);//Afegim Size
+        newRegister.put("timeControl", timeControl);//Afegim flag de temps
+        newRegister.put("result", status);//Afegim Status
+
+        db.insert("Partides", null, newRegister);
     }
 
     private String BuildLog(String alias, String size, String status) {
         return alias + " | Mida Greaella: "+ size + " | "+ status;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
