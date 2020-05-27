@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".ResultsActivity">
         </activity>
-        <activity android:name=".GameActivity">
+        <activity android:name=".Game.GameActivity">
         </activity>
         <activity android:name=".Preferences.PreferencesActivity">
         </activity>

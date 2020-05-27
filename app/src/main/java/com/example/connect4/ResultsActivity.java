@@ -17,6 +17,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.connect4.DDBB.PartidaSQLiteHelper;
+import com.example.connect4.Game.GameActivity;
 import com.example.connect4.Preferences.PreferencesActivity;
 
 import java.text.SimpleDateFormat;

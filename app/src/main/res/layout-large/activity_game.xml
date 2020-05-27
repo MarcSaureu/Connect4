@@ -12,6 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_grid"
+        android:layout_weight="1"
         class="com.example.connect4.Game.GridFrag"/>
+
+    <fragment
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_log"
+        android:layout_weight="2"
+        class="com.example.connect4.Game.LogFrag"/>
 
 </LinearLayout>

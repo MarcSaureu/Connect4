@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <fragment
         class="com.example.connect4.Old.FragmentList"
@@ -13,6 +12,14 @@
         android:layout_height="match_parent"
         android:id="@+id/FrgListOLD"
         tools:layout="@layout/fragment_list_old"
+        android:layout_weight="1"
+        />
+    <fragment
+        class="com.example.connect4.Old.FragmentDetail"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/FrgDetailOLD"
+        tools:layout="@layout/fragment_detail_old"
         android:layout_weight="1"
         />
 
