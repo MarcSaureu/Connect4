@@ -60,7 +60,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@drawable/rounded_button"
-            android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
             android:elevation="10dp"
             android:textSize="20sp"
             android:text="@string/Sortir" />

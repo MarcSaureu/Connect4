@@ -89,7 +89,7 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private String BuildLog(String alias, String size, String status, int usedtime) {
-        return alias + " | Mida Greaella: "+ size + " | Temps total: "+ usedtime+"s | " + status;
+        return alias + " | Mida Graella: "+ size + " | Temps total: "+ usedtime+"s | " + status;
     }
 
 

@@ -17,40 +17,40 @@
             android:id="@+id/Benvinguda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="28sp"
+            android:layout_margin="30dp"
+            android:textSize="32sp"
             android:text="@string/Ayuda_Text1" />
 
         <TextView
             android:id="@+id/InfoText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="16sp"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
             android:text="@string/Ayuda_Text2" />
 
         <TextView
             android:id="@+id/InfoText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="16sp"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
             android:text="@string/Ayuda_Text5" />
 
         <TextView
             android:id="@+id/InfoText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="16sp"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
             android:text="@string/Ayuda_Text3" />
 
         <TextView
             android:id="@+id/InfoText4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="16sp"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
             android:text="@string/Ayuda_Text4" />
 
         <Button
@@ -58,9 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/go_back"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="@string/Anar_Al_Joc"
-            android:layout_margin="20dp"
+            android:layout_margin="30dp"
             android:background="@drawable/rounded_button"
 
             />

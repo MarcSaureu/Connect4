@@ -114,7 +114,6 @@
                 android:textSize="20dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/rounded_button"
-                android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
                 android:text="@string/Sortir"
                 />
         </LinearLayout>
