@@ -74,9 +74,11 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
 
         if(game.checkForFinish()){
             Intent next = new Intent(GameActivity.this, ResultsActivity.class);
+            int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
             if(game.getStatus() == Status.PLAYER1_WINS) data.putString("statuskey", "Has Guanyat");
             if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
             if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+            data.putInt("usedTime",time);
             next.putExtras(data);
             startActivity(next);
             finish();
@@ -91,9 +93,11 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
 
             if (game.checkForFinish()) {
                 Intent next = new Intent(GameActivity.this, ResultsActivity.class);
+                int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
                 if (game.getStatus() == Status.PLAYER2_WINS) data.putString("statuskey", "HAS PERDUT");
                 if (game.getStatus() == Status.DRAW) data.putString("statuskey", "HAS EMPATAT");
                 if (game.getStatus() == Status.TIMEOVER) data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+                data.putInt("usedTime",time);
                 next.putExtras(data);
                 startActivity(next);
                 finish();

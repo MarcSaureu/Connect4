@@ -45,6 +45,7 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         //Valors del Intent
         Intent intent = getIntent();
         String Status = intent.getStringExtra("statuskey");
+        int usedTime = intent.getIntExtra("usedTime", 0);
 
 
         //Valors de la SharedPreferences
@@ -57,7 +58,7 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
         date.setText(dat.toString());
 
-        String Log = BuildLog(Alias, Size, Status);
+        String Log = BuildLog(Alias, Size, Status, usedTime);
         email.requestFocus();
 
         log.setText(Log);
@@ -66,13 +67,13 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
         SQLiteDatabase db = ddbb.getWritableDatabase();
         if(db != null){
-            insertDB(db,Alias, Size, Status, dat, timeControl);
+            insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
         }
         db.close();
 
     }
 
-    private void insertDB(SQLiteDatabase db, String alias, String size, String status, Date dat, boolean timeControl) {
+    private void insertDB(SQLiteDatabase db, String alias, String size, String status, Date dat, boolean timeControl, int usedTime) {
         ContentValues newRegister = new ContentValues();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("es", "ES"));
 
@@ -80,13 +81,14 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         newRegister.put("date", dateFormat.format(dat));//Afegim Data
         newRegister.put("grillSize", size);//Afegim Size
         newRegister.put("timeControl", timeControl);//Afegim flag de temps
+        newRegister.put("usedTime", usedTime);
         newRegister.put("result", status);//Afegim Status
 
         db.insert("Partides", null, newRegister);
     }
 
-    private String BuildLog(String alias, String size, String status) {
-        return alias + " | Mida Greaella: "+ size + " | "+ status;
+    private String BuildLog(String alias, String size, String status, int usedtime) {
+        return alias + " | Mida Greaella: "+ size + " | Temps total: "+ usedtime+"s | " + status;
     }
 
 
