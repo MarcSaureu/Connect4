@@ -21,7 +21,7 @@ public class FragmentList extends ListFragment {
     private GameListener listener;
 
     public interface GameListener{
-        void onParidaSelected(String id);
+        void onPartidaSelected(String id);
     }
     public void setGameListener(GameListener listener){
         this.listener = listener;
@@ -57,7 +57,7 @@ public class FragmentList extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id){
         if(listener!=null){
             String stringId = String.valueOf(id);
-            listener.onParidaSelected(stringId);
+            listener.onPartidaSelected(stringId);
         }
     }
 

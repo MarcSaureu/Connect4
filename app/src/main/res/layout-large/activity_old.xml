@@ -14,6 +14,14 @@
         tools:layout="@layout/fragment_list_old"
         android:layout_weight="1"
         />
+    <fragment
+        class="com.example.connect4.Old.FragmentDetail"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/FrgDetailOLD"
+        tools:layout="@layout/fragment_detail_old"
+        android:layout_weight="1"
+        />
 
     <Button
         android:layout_width="180dp"

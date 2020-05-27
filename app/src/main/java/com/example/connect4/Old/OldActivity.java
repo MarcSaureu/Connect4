@@ -1,10 +1,13 @@
 package com.example.connect4.Old;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.connect4.R;
@@ -35,8 +38,19 @@ public class OldActivity extends AppCompatActivity implements FragmentList.GameL
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onParidaSelected(String id) {
+    public void onPartidaSelected(String id) {
+        FragmentDetail fragmentDetail = (FragmentDetail) getFragmentManager().findFragmentById(R.id.FrgDetailOLD);
+        boolean isDetail = (fragmentDetail != null && fragmentDetail.isInLayout());
+
+        if(isDetail){
+            fragmentDetail.ViewGame(id);
+        }else{
+            Intent i = new Intent(this, DetailActivity.class);
+            i.putExtra(getString(R.string.id_key), id);
+            startActivity(i);
+        }
 
     }
 }

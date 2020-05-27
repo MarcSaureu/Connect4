@@ -38,4 +38,5 @@
     <string name="AliasLog">Alias :  </string>
     <string name="Config">Configuracio</string>
     <string name="Database">Consultar Partides</string>
+    <string name="id_key">keyid</string>
 </resources>
