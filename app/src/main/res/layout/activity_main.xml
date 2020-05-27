@@ -20,7 +20,6 @@
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:contentDescription="@string/Principal"
             android:src="@mipmap/ic_launcher" />
 
         <Button

@@ -1,19 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Connect4</string>
+
+    <!-- Strings de la Pantalla Principal -->
     <string name="ajuda">Ajuda</string>
     <string name="Començar_Partida">Començar Partida</string>
     <string name="Sortir">Sortir</string>
     <string name="Començar">Començar</string>
-    <string name="Principal">Principal</string>
     <string name="Configuracion">Configuracion</string>
     <string name="Ayuda">Ayuda</string>
-    <string name="Prueba">Prueba</string>
-    <string name="Anar_Al_Joc">Anar al joc</string>
+    <string name="Database">Consultar Partides</string>
+
+
+    <!-- Strings de la Pantalla Help -->
     <string name="Ayuda_Text1">Benvingut al joc de CONNECT 4</string>
     <string name="Ayuda_Text2" tools:ignore="Typos">El joc consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador(roig) abans que el teu oponent.</string>
     <string name="Ayuda_Text3">A cada torn, el jugador introdueix una fitxa a la columna triada(sempre que no estigui completa), i aquesta cau a la posicio mes baixa possible.</string>
     <string name="Ayuda_Text4">Guanya la partida el jugador que primer aconsegueix alinear 4 fitxes consecutives del seu color.</string>
     <string name="Ayuda_Text5">Si totes les columnes estan plenes i ningu ha aconseguit alinear-ne 4 fitxes, hi ha un empat.</string>
+    <string name="Anar_Al_Joc">Anar al joc</string>
+
+    <!-- Strings de la Pantalla Config i SharedPreferences -->
     <string name="Alias">Alias</string>
     <string name="Alias_info">Alias del jugador</string>
     <string name="Ayuda_Nom">Nom</string>
@@ -25,6 +31,8 @@
     <string name="Graella_7">7</string>
     <string name="Graella_6">6</string>
     <string name="Graella_5">5</string>
+
+    <!-- Strings de la Pantalla Resultats -->
     <string name="aliaskey">aliaskey</string>
     <string name="graellakey">graellakey</string>
     <string name="tempskey">tempskey</string>
@@ -37,6 +45,7 @@
     <string name="Nova_Partida">Nova Partida</string>
     <string name="AliasLog">Alias :  </string>
     <string name="Config">Configuracio</string>
-    <string name="Database">Consultar Partides</string>
+
+    <!-- Strings de la DataBase -->
     <string name="id_key">keyid</string>
 </resources>
