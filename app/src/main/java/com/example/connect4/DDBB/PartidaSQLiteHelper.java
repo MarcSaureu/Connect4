@@ -3,6 +3,7 @@ package com.example.connect4.DDBB;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 
 public class PartidaSQLiteHelper extends SQLiteOpenHelper {
@@ -15,7 +16,7 @@ public class PartidaSQLiteHelper extends SQLiteOpenHelper {
             "usedTime INTEGER, " +
             "result TEXT)";
 
-    public PartidaSQLiteHelper(Context context,String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public PartidaSQLiteHelper(Context context,String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 

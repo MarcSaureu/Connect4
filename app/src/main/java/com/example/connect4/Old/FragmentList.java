@@ -69,7 +69,7 @@ public class FragmentList extends ListFragment {
         }
         catch (ClassCastException e){
             throw new ClassCastException(context.toString() +
-                    " must implement OnPartidaSeleccionada()");
+                    " must implement OnPartidaSelected()");
         }
     }
 }

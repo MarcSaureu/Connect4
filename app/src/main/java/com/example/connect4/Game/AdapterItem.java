@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class AdapterItem extends BaseAdapter implements Serializable {
 
-    protected Activity activity;
-    protected ArrayList<Item> items;
+    private Activity activity;
+    private ArrayList<Item> items;
 
     public AdapterItem (Activity activity, ArrayList<Item> items) {
         this.activity = activity;
@@ -41,22 +41,21 @@ public class AdapterItem extends BaseAdapter implements Serializable {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
+        Item log = items.get(position);
 
         if (convertView == null) {
             LayoutInflater inf = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inf.inflate(R.layout.position_item, null);
         }
 
-        Item dir = items.get(position);
+        TextView numCasella =  v.findViewById(R.id.Casella);
+        numCasella.setText(log.getTitle());
 
-        TextView title =  v.findViewById(R.id.Casella);
-        title.setText(dir.getTitle());
+        TextView timeUsed =  v.findViewById(R.id.TempsOcupat);
+        timeUsed.setText(log.getDescription());
 
-        TextView description =  v.findViewById(R.id.TempsOcu);
-        description.setText(dir.getDescription());
-
-        TextView time =  v.findViewById(R.id.Tempsrestant);
-        time.setText(dir.getTemps());
+        TextView TimeLeft =  v.findViewById(R.id.TempsRestant);
+        TimeLeft.setText(log.getTemps());
 
         return v;
     }

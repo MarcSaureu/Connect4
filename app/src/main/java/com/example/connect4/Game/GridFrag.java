@@ -111,13 +111,13 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
 
             if (game.getStatus() == Status.PLAYER1_WINS) {
-                data.putString("statuskey", "HAS GUANYAT");
+                data.putString("statuskey", "WIN");
             }
             if (game.getStatus() == Status.DRAW) {
-                data.putString("statuskey", "HAS EMPATAT");
+                data.putString("statuskey", "DRAW");
             }
             if (game.getStatus() == Status.TIMEOVER) {
-                data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+                data.putString("statuskey", "NO TIME, DRAW");
             }
             data.putInt("usedTime", time);
             next.putExtras(data);
@@ -130,13 +130,13 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
 
             if (game.getStatus() == Status.PLAYER2_WINS){
-                data.putString("statuskey", "HAS PERDUT");
+                data.putString("statuskey", "LOSE");
             }
             if (game.getStatus() == Status.DRAW){
-                data.putString("statuskey", "HAS EMPATAT");
+                data.putString("statuskey", "DRAW");
             }
             if (game.getStatus() == Status.TIMEOVER){
-                data.putString("statuskey", "S'HA ACABAT EL TEMPS, HAS EMPATAT");
+                data.putString("statuskey", "NO TIME, DRAW");
             }
             data.putInt("usedTime", time);
             next.putExtras(data);
@@ -193,7 +193,7 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
         try{
             mylistener = (OnPositionSelectedListener) context;
         } catch (ClassCastException e){
-            throw new ClassCastException(context.toString() + " must implement OnPositionSelectedListener");
+            throw new ClassCastException(context.toString() + " must implement OnPositionSelected");
         }
     }
 

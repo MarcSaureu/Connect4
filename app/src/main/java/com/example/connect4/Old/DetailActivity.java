@@ -23,7 +23,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
         detail.ViewGame(getIntent().getStringExtra(getString(R.string.id_key)));
 
-        Button exit = findViewById(R.id.goBack_button);
+        Button exit = findViewById(R.id.BackButton3);
 
         exit.setOnClickListener(this);
     }
@@ -31,7 +31,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.goBack_button:
+            case R.id.BackButton3:
                 finish();
                 break;
         }

@@ -75,17 +75,17 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void insertDB(SQLiteDatabase db, String alias, String size, String status, Date dat, boolean timeControl, int usedTime) {
-        ContentValues newRegister = new ContentValues();
+        ContentValues Register = new ContentValues();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("es", "ES"));
 
-        newRegister.put("alias", alias); //Afegim Alias
-        newRegister.put("date", dateFormat.format(dat));//Afegim Data
-        newRegister.put("grillSize", size);//Afegim Size
-        newRegister.put("timeControl", timeControl);//Afegim flag de temps
-        newRegister.put("usedTime", usedTime);
-        newRegister.put("result", status);//Afegim Status
+        Register.put("alias", alias); //Afegim Alias
+        Register.put("date", dateFormat.format(dat));//Afegim Data
+        Register.put("grillSize", size);//Afegim Size
+        Register.put("timeControl", timeControl);//Afegim flag de temps
+        Register.put("usedTime", usedTime);
+        Register.put("result", status);//Afegim Status
 
-        db.insert("Partides", null, newRegister);
+        db.insert("Partides", null, Register);
     }
 
     private String BuildLog(String alias, String size, String status, int usedtime) {

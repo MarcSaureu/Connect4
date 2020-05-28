@@ -17,17 +17,17 @@ public class GameActivity extends AppCompatActivity implements GridFrag.OnPositi
         setContentView(R.layout.activity_game);
         getSupportActionBar().hide();
 
-        GridFrag grid = (GridFrag) getFragmentManager().findFragmentById(R.id.game);
+        GridFrag grid = (GridFrag) getFragmentManager().findFragmentById(R.id.game_frag);
 
         grid.setOnPositionListener(this);
     }
 
     @Override
     public void onPositionSelected(Position pos, Date start, Date end, Long timerest, boolean time){
-        LogFrag log = (LogFrag) getFragmentManager().findFragmentById(R.id.log);
-        boolean logexists = (log != null && log.isInLayout());
+        LogFrag LogFrag = (LogFrag) getFragmentManager().findFragmentById(R.id.log_frag);
+        boolean logexists = (LogFrag != null && LogFrag.isInLayout());
 
         if(logexists)
-            log.showPosition(pos,start,end, timerest,time);
+            LogFrag.showPosition(pos,start,end, timerest,time);
     }
 }
