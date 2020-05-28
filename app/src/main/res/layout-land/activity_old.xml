@@ -27,7 +27,7 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
-        android:drawableLeft="@drawable/go_back"
+        android:drawableStart="@drawable/go_back"
         android:paddingLeft="20dp"
         android:id="@+id/BackButton2"
         android:text="@string/Anar_Al_Joc"/>

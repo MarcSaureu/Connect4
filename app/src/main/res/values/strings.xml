@@ -48,4 +48,9 @@
 
     <!-- Strings de la DataBase -->
     <string name="id_key">keyid</string>
+
+    <string name="Win">Has Guanyat</string>
+    <string name="Lose">Has Perdut</string>
+    <string name="Draw">Has Empatat</string>
+    <string name="TimeDraw">S\'ha Acabat el temps, Empat</string>
 </resources>

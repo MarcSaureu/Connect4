@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -111,12 +112,15 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
 
             if (game.getStatus() == Status.PLAYER1_WINS) {
+                Toast.makeText(view.getContext(), R.string.Win,Toast.LENGTH_SHORT).show();
                 data.putString("statuskey", "WIN");
             }
             if (game.getStatus() == Status.DRAW) {
+                Toast.makeText(view.getContext(), R.string.Draw,Toast.LENGTH_SHORT).show();
                 data.putString("statuskey", "DRAW");
             }
             if (game.getStatus() == Status.TIMEOVER) {
+                Toast.makeText(view.getContext(), R.string.TimeDraw,Toast.LENGTH_SHORT).show();
                 data.putString("statuskey", "NO TIME, DRAW");
             }
             data.putInt("usedTime", time);
@@ -130,12 +134,15 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
             int time = (int)(new Date().getTime() - game.getStartTime()) / 1000;
 
             if (game.getStatus() == Status.PLAYER2_WINS){
+                Toast.makeText(view.getContext(), R.string.Lose,Toast.LENGTH_SHORT).show();
                 data.putString("statuskey", "LOSE");
             }
             if (game.getStatus() == Status.DRAW){
+                Toast.makeText(view.getContext(), R.string.Draw,Toast.LENGTH_SHORT).show();
                 data.putString("statuskey", "DRAW");
             }
             if (game.getStatus() == Status.TIMEOVER){
+                Toast.makeText(view.getContext(), R.string.TimeDraw,Toast.LENGTH_SHORT).show();
                 data.putString("statuskey", "NO TIME, DRAW");
             }
             data.putInt("usedTime", time);

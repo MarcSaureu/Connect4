@@ -20,13 +20,12 @@ public class OldActivity extends AppCompatActivity implements FragmentList.GameL
         setContentView(R.layout.activity_old);
         getSupportActionBar().hide();
 
+        Button exit = findViewById(R.id.BackButton2);
+        exit.setOnClickListener(this);
+
         FragmentList fragmentList = (FragmentList) getFragmentManager().findFragmentById(R.id.FrgListOLD);
 
         fragmentList.setGameListener(this);
-
-        Button exit = findViewById(R.id.BackButton2);
-
-        exit.setOnClickListener(this);
     }
 
     @Override
