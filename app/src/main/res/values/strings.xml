@@ -54,4 +54,5 @@
     <string name="Draw">Has Empatat</string>
     <string name="TimeDraw">S\'ha Acabat el temps, Empat</string>
     <string name="Unable">No es pot fer el moviment</string>
+    <string name="AddedDDBB">S\'ha guardat la partida a la Base de Dades</string>
 </resources>

@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -63,12 +64,14 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
         log.setText(Log);
 
+
         //Base de Dades
         if(savedInstanceState == null){
             PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
             SQLiteDatabase db = ddbb.getWritableDatabase();
             if(db != null){
                 insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
+                Toast.makeText(this, R.string.AddedDDBB,Toast.LENGTH_SHORT).show();
             }
             db.close();
         }
