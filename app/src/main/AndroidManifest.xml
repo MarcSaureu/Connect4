@@ -24,9 +24,9 @@
         </activity>
         <activity android:name=".Preferences.PreferencesActivity">
         </activity>
-        <activity android:name=".Old.OldActivity">
+        <activity android:name=".Old.AccessBDActivity">
         </activity>
-        <activity android:name=".Old.DetailActivity">
+        <activity android:name=".Old.DetailRegActivity">
         </activity>
     </application>
 

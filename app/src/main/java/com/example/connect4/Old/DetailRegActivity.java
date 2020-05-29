@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.connect4.R;
 
-public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class DetailRegActivity extends AppCompatActivity implements View.OnClickListener {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override

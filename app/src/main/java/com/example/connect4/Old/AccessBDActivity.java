@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.connect4.R;
 
-public class OldActivity extends AppCompatActivity implements FragmentList.GameListener, View.OnClickListener {
+public class AccessBDActivity extends AppCompatActivity implements FragmentList.GameListener, View.OnClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -46,7 +46,7 @@ public class OldActivity extends AppCompatActivity implements FragmentList.GameL
         if(isDetail){
             fragmentDetail.ViewGame(id);
         }else{
-            Intent i = new Intent(this, DetailActivity.class);
+            Intent i = new Intent(this, DetailRegActivity.class);
             i.putExtra(getString(R.string.id_key), id);
             startActivity(i);
         }
