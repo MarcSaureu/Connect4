@@ -73,37 +73,41 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             int col = position % size;
             Position pos = game.drop(col);
+            if(pos == null){
+                Toast.makeText(view.getContext(), R.string.Unable,Toast.LENGTH_SHORT).show();
+            }else {
 
-            table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
-            table.notifyDataSetChanged();
-
-            end = new Date();
-            long timerest = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
-            if(mylistener!=null)
-                mylistener.onPositionSelected(pos, start, end, Math.abs(timerest), time);
-
-            timeControl();
-            if (game.checkForFinish()) {
-                GameFinished(1);
-            } else {
-                start = new Date();
-                //JUGARA LA MAQUINA
-                col = game.playOpponent();
-                pos = game.drop(col);
-
-                table.setChip(R.drawable.yellowchip, pos.getRow(), pos.getColumn());
+                table.setChip(R.drawable.redchip, pos.getRow(), pos.getColumn());
                 table.notifyDataSetChanged();
 
                 end = new Date();
-                timerest = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
-                if(mylistener!=null)
+                long timerest = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
+                if (mylistener != null)
                     mylistener.onPositionSelected(pos, start, end, Math.abs(timerest), time);
 
                 timeControl();
-                if (game.checkForFinish())
-                    GameFinished(0);
+                if (game.checkForFinish()) {
+                    GameFinished(1);
+                } else {
+                    start = new Date();
+                    //JUGARA LA MAQUINA
+                    col = game.playOpponent();
+                    pos = game.drop(col);
+
+                    table.setChip(R.drawable.yellowchip, pos.getRow(), pos.getColumn());
+                    table.notifyDataSetChanged();
+
+                    end = new Date();
+                    timerest = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
+                    if (mylistener != null)
+                        mylistener.onPositionSelected(pos, start, end, Math.abs(timerest), time);
+
+                    timeControl();
+                    if (game.checkForFinish())
+                        GameFinished(0);
+                }
+                start = new Date();
             }
-            start = new Date();
     }
     private void GameFinished(int player){
         if (player == 1){

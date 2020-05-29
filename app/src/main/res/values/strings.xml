@@ -53,4 +53,5 @@
     <string name="Lose">Has Perdut</string>
     <string name="Draw">Has Empatat</string>
     <string name="TimeDraw">S\'ha Acabat el temps, Empat</string>
+    <string name="Unable">No es pot fer el moviment</string>
 </resources>
