@@ -40,8 +40,8 @@ public class LogFrag extends Fragment {
     }
 
     private void buildLogTitle() {
-        TextView log = view.findViewById(R.id.loger);
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+        TextView log = view.findViewById(R.id.loger);
 
         String Alias = mySharedPreferences.getString(getString(R.string.Alias), "P1");
         String Size = mySharedPreferences.getString(getString(R.string.Graella), "7");
@@ -76,9 +76,9 @@ public class LogFrag extends Fragment {
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         String Text1 = ("Casella Ocupada:    (" + (pos.getColumn() + 1) +", "+ (pos.getRow() + 1) + ") \n" );
         String Text2 = ("Temps inici: "+dateFormat.format(start)+";Temps final: "+dateFormat.format(end));
+        String Text3 = "Temps restant: " + timerest.toString() + "secs";
 
         if(time){
-            String Text3 = "Temps restant: " + timerest.toString() + "secs";
             Item item = new Item(Text1,Text2,Text3);
             items.add(item);
         }else{

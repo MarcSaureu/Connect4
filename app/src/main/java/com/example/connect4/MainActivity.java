@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.connect4.Game.GameActivity;
-import com.example.connect4.Old.OldActivity;
+import com.example.connect4.Old.AccessBDActivity;
 import com.example.connect4.Preferences.PreferencesActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.database_button:
-                Intent intent2 = new Intent(MainActivity.this, OldActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, AccessBDActivity.class);
                 startActivity(intent2);
                 break;
         }
