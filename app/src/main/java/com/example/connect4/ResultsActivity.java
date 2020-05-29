@@ -48,7 +48,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         String Status = intent.getStringExtra("statuskey");
         int usedTime = intent.getIntExtra("usedTime", 0);
 
-
         //Valors de la SharedPreferences
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String Alias = mySharedPreferences.getString(getString(R.string.Alias), "P1");
@@ -65,12 +64,14 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         log.setText(Log);
 
         //Base de Dades
-        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
-        SQLiteDatabase db = ddbb.getWritableDatabase();
-        if(db != null){
-            insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
+        if(savedInstanceState == null){
+            PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
+            SQLiteDatabase db = ddbb.getWritableDatabase();
+            if(db != null){
+                insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
+            }
+            db.close();
         }
-        db.close();
 
     }
 

@@ -89,7 +89,7 @@
             >
             <Button
                 android:id="@+id/Enviar_email"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:textSize="20dp"
@@ -99,7 +99,7 @@
 
             <Button
                 android:id="@+id/Nova_Partida"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:layout_margin="5dp"
@@ -109,7 +109,7 @@
 
             <Button
                 android:id="@+id/exit_button2"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:layout_margin="5dp"

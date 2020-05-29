@@ -74,7 +74,7 @@
 
     <Button
         android:id="@+id/Enviar_email"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_button"
@@ -83,7 +83,7 @@
 
     <Button
         android:id="@+id/Nova_Partida"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_button"
@@ -92,7 +92,7 @@
 
     <Button
         android:id="@+id/exit_button2"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_button"
