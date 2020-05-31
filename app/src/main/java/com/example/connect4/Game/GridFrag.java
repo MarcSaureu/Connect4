@@ -186,7 +186,7 @@ public class GridFrag extends Fragment implements AdapterView.OnItemClickListene
 
         long time = ((new Date().getTime() - game.getStartTime()) / 1000) - game.getGameTime();
         if(time>=0)
-            text.setText("0 seconds");
+            text.setText(R.string.NoTime);
         else
             text.setText(Math.abs(time)  + " seconds");
     }

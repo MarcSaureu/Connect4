@@ -44,8 +44,8 @@ public class AdapterItem extends BaseAdapter implements Serializable {
         Item log = items.get(position);
 
         if (convertView == null) {
-            LayoutInflater inf = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inf.inflate(R.layout.position_item, null);
+            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inflater.inflate(R.layout.position_item, null);
         }
 
         TextView numCasella =  v.findViewById(R.id.Casella);
