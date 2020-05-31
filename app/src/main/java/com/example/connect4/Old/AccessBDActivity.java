@@ -30,10 +30,8 @@ public class AccessBDActivity extends AppCompatActivity implements FragmentList.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.BackButton2:
-                finish();
-                break;
+        if (v.getId() == R.id.BackButton2) {
+            finish();
         }
     }
 
