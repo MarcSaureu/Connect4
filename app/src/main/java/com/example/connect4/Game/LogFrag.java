@@ -33,13 +33,12 @@ public class LogFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_log, container, false);
 
-        buildTitle();
-        build(savedInstanceState);
+        buildTitle(savedInstanceState);
 
         return view;
     }
 
-    private void buildTitle() {
+    private void buildTitle(Bundle savedInstanceState) {
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         TextView log = view.findViewById(R.id.loger);
 
@@ -54,6 +53,7 @@ public class LogFrag extends Fragment {
         }else{
             log.append("Sense Control de Temps");
         }
+        build(savedInstanceState);
     }
 
 
