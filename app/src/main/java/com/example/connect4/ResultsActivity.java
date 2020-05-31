@@ -67,15 +67,19 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
 
         //Base de Dades
         if(savedInstanceState == null){
-            PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
-            SQLiteDatabase db = ddbb.getWritableDatabase();
-            if(db != null){
-                insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
-                Toast.makeText(this, R.string.AddedDDBB,Toast.LENGTH_SHORT).show();
-            }
-            db.close();
+           insert(Alias, Size, Status, dat, timeControl, usedTime);
         }
 
+    }
+
+    private void insert(String Alias, String Size, String Status, Date dat, boolean timeControl, int usedTime){
+        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
+        SQLiteDatabase db = ddbb.getWritableDatabase();
+        if(db != null){
+            insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
+            Toast.makeText(this, R.string.AddedDDBB,Toast.LENGTH_SHORT).show();
+        }
+        db.close();
     }
 
     private void insertDB(SQLiteDatabase db, String alias, String size, String status, Date dat, boolean timeControl, int usedTime) {
