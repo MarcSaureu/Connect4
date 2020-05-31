@@ -51,7 +51,7 @@
 
         <Button
             android:id="@+id/BackButton"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/go_back"
             android:text="@string/Anar_Al_Joc"
