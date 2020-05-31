@@ -33,13 +33,13 @@ public class LogFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_log, container, false);
 
-        buildLogTitle();
-        buildLog(savedInstanceState);
+        buildTitle();
+        build(savedInstanceState);
 
         return view;
     }
 
-    private void buildLogTitle() {
+    private void buildTitle() {
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         TextView log = view.findViewById(R.id.loger);
 
@@ -57,7 +57,7 @@ public class LogFrag extends Fragment {
     }
 
 
-    private void buildLog(Bundle savedInstanceState) {
+    private void build(Bundle savedInstanceState) {
 
         if(savedInstanceState != null && (savedInstanceState.getSerializable("adapter") != null)){
             items = (ArrayList<Item>) savedInstanceState.getSerializable("itemArray");

@@ -19,21 +19,18 @@ public class DetailRegActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_detail_old);
         getSupportActionBar().hide();
 
+        Button exit = findViewById(R.id.BackButton3);
         FragmentDetail detail = (FragmentDetail)getFragmentManager().findFragmentById(R.id.FrgListOLD);
 
         detail.ViewGame(getIntent().getStringExtra(getString(R.string.id_key)));
-
-        Button exit = findViewById(R.id.BackButton3);
 
         exit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.BackButton3:
-                finish();
-                break;
+        if (v.getId() == R.id.BackButton3) {
+            finish();
         }
     }
 }

@@ -21,10 +21,10 @@ public class AccessBDActivity extends AppCompatActivity implements FragmentList.
         getSupportActionBar().hide();
 
         Button exit = findViewById(R.id.BackButton2);
-        exit.setOnClickListener(this);
 
         FragmentList fragmentList = (FragmentList) getFragmentManager().findFragmentById(R.id.FrgListOLD);
 
+        exit.setOnClickListener(this);
         fragmentList.setGameListener(this);
     }
 
