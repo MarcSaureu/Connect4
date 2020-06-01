@@ -53,38 +53,38 @@ public class PartidaSQLiteHelper extends SQLiteOpenHelper {
     }
 
     public void upgrade(SQLiteDatabase db){
-        for (long i = 1; i < db.getMaximumSize()+1; i++){
-            String id = Long.toString(i);
-            String[] gameID = new String[]{id};
-            String[] campos = new String[]{"_id", "alias", "date", "grillSize", "timeControl", "usedTime","result"};
-            Cursor c = db.query("Partides", campos, "_id=?",gameID, null,null,null);
-            c.moveToFirst();
+        int pos = 0;
+        String[] campos = new String[]{"_id", "alias", "date", "grillSize", "timeControl", "usedTime","result"};
+        Cursor c = db.query("Partides", campos, null,null, null,null,null);
+        c.moveToFirst();
+        for(int i = 0; i < c.getColumnCount(); i++) {
             ContentValues Register = new ContentValues();
 
-            Register.put("alias", c.getString(1)); //Afegim Alias
-            Register.put("date", c.getString(2));//Afegim Data
-            Register.put("grillSize", c.getString(3));//Afegim Size
-            Register.put("timeControl", c.getString(4));//Afegim flag de temps
-            Register.put("usedTime", c.getString(5));
+            Register.put("alias", c.getString(pos+1)); //Afegim Alias
+            Register.put("date", c.getString(pos+2));//Afegim Data
+            Register.put("grillSize", c.getString(pos+3));//Afegim Size
+            Register.put("timeControl", c.getString(pos+4));//Afegim flag de temps
+            Register.put("usedTime", c.getString(pos+5));
 
-            String result = c.getString(6);
+            String result = c.getString(pos+6);
             Bitmap icon;
-            if(result.equals("WIN")){
-                icon = BitmapFactory.decodeResource(context.getResources(),R.drawable.victoria);
-            }else if(result.equals("DRAW")){
-                icon = BitmapFactory.decodeResource(context.getResources(),R.drawable.empate);
-            }else if(result.equals("LOSE")){
-                icon = BitmapFactory.decodeResource(context.getResources(),R.drawable.derrota);
-            }else{
-                icon = BitmapFactory.decodeResource(context.getResources(),R.drawable.tiempoagotado);
+            if (result.equals("WIN")) {
+                icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.victoria);
+            } else if (result.equals("DRAW")) {
+                icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.empate);
+            } else if (result.equals("LOSE")) {
+                icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.derrota);
+            } else {
+                icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.tiempoagotado);
             }
 
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            icon.compress(Bitmap.CompressFormat.PNG,0,outputStream);
+            icon.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
             byte[] blob = outputStream.toByteArray();
             Register.put("result", blob);//Afegim Status
 
             db.insert("Partides2", null, Register);
+            pos +=7;
         }
     }
 }
