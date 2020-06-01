@@ -3,6 +3,8 @@ package com.example.connect4.Old;
 import android.app.Fragment;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -39,15 +41,17 @@ public class ResulPFrag extends Fragment {
         ImageView imageview = view.findViewById(R.id.ResultInfo);
         String[] gameID = new String[]{id};
 
-        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(), "Partides", null, 1);
+        //PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(), "Partides", null, 1);
+        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(), "Partides2", null, 2);
         SQLiteDatabase db = ddbb.getReadableDatabase();
 
         String[] campos = new String[]{"_id","result"};
-        Cursor c = db.query(
-                "Partides", campos, "_id=?", gameID, null,null,null);
+        //Cursor c = db.query("Partides", campos, "_id=?", gameID, null,null,null);
+        Cursor c = db.query("Partides2", campos, "_id=?", gameID, null,null,null);
         c.moveToFirst();
-        String result = c.getString(1);
-        if(result.equals("WIN")){
+        //String result = c.getString(1);
+        byte[] result = c.getBlob(1);
+        /*if(result.equals("WIN")){
             imageview.setImageResource(R.drawable.victoria);
         }else if(result.equals("DRAW")){
             imageview.setImageResource(R.drawable.empate);
@@ -55,7 +59,9 @@ public class ResulPFrag extends Fragment {
             imageview.setImageResource(R.drawable.derrota);
         }else{
             imageview.setImageResource(R.drawable.tiempoagotado);
-        }
+        }*/
+        Bitmap icon = BitmapFactory.decodeByteArray(result,0,result.length);
+        imageview.setImageBitmap(icon);
     }
 
 }

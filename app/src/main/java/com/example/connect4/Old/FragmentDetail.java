@@ -55,13 +55,14 @@ public class FragmentDetail extends Fragment {
         TextView txt = getView().findViewById(R.id.Info);
         String[] gameID = new String[]{id};
 
-        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(), "Partides", null, 1);
+        //PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(), "Partides", null, 1);
+        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(), "Partides2", null, 2);
         SQLiteDatabase db = ddbb.getReadableDatabase();
 
         //String[] campos = new String[]{"_id", "alias", "date", "grillSize", "timeControl", "usedTime", "result"};
         String[] campos = new String[]{"_id", "alias", "date", "grillSize", "timeControl", "usedTime"};
-        Cursor c = db.query(
-                "Partides", campos, "_id=?", gameID, null,null,null);
+        //Cursor c = db.query("Partides", campos, "_id=?", gameID, null,null,null);
+        Cursor c = db.query("Partides2", campos, "_id=?", gameID, null,null,null);
         c.moveToFirst();
         //info = c.getString(1) + "\n" + c.getString(2) + "\n" + c.getString(3) + "\n" + c.getString(4) + "\n" + c.getString(5) + "\n" + c.getString(6);
         info = c.getString(1) + "\n" + c.getString(2) + "\n" + c.getString(3) + "\n" + c.getString(4) + "\n" + c.getString(5);

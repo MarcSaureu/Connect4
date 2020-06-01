@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -21,6 +23,7 @@ import com.example.connect4.DDBB.PartidaSQLiteHelper;
 import com.example.connect4.Game.GameActivity;
 import com.example.connect4.Preferences.PreferencesActivity;
 
+import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -73,7 +76,8 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void insert(String Alias, String Size, String Status, Date dat, boolean timeControl, int usedTime){
-        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
+        //PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides", null, 1);
+        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(this, "Partides2", null, 2);
         SQLiteDatabase db = ddbb.getWritableDatabase();
         if(db != null){
             insertDB(db,Alias, Size, Status, dat, timeControl, usedTime);
@@ -91,9 +95,26 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
         Register.put("grillSize", size);//Afegim Size
         Register.put("timeControl", timeControl);//Afegim flag de temps
         Register.put("usedTime", usedTime);
-        Register.put("result", status);//Afegim Status
+        //Register.put("result", status);//Afegim Status
+        Bitmap icon;
+        if(status.equals("WIN")){
+            icon = BitmapFactory.decodeResource(this.getResources(),R.drawable.victoria);
+        }else if(status.equals("DRAW")){
+            icon = BitmapFactory.decodeResource(this.getResources(),R.drawable.empate);
+        }else if(status.equals("LOSE")){
+            icon = BitmapFactory.decodeResource(this.getResources(),R.drawable.derrota);
+        }else{
+            icon = BitmapFactory.decodeResource(this.getResources(),R.drawable.tiempoagotado);
+        }
 
-        db.insert("Partides", null, Register);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        icon.compress(Bitmap.CompressFormat.PNG,0,outputStream);
+        byte[] blob = outputStream.toByteArray();
+        Register.put("result", blob);//Afegim Status
+
+        db.insert("Partides2", null, Register);
+
+        //db.insert("Partides", null, Register);
     }
 
     private String BuildLog(String alias, String size, String status, int usedtime) {

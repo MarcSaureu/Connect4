@@ -37,13 +37,15 @@ public class FragmentList extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(),"Partides", null, 1);
+        //PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(),"Partides", null, 1);
+        PartidaSQLiteHelper ddbb = new PartidaSQLiteHelper(getContext(),"Partides2", null, 2);
 
         SQLiteDatabase db = ddbb.getReadableDatabase();
 
         //String[] camps = new String[] {"_id", "alias", "date", "result"};
         String[] camps = new String[] {"_id", "alias", "date"};
-        Cursor cursor = db.query("Partides", camps,null,null,null,null,null);
+        //Cursor cursor = db.query("Partides", camps,null,null,null,null,null);
+        Cursor cursor = db.query("Partides2", camps,null,null,null,null,null);
 
         //String[] from = new String[] {"alias", "date", "result"};
         String[] from = new String[] {"alias", "date"};
