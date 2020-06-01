@@ -41,11 +41,14 @@ public class FragmentList extends ListFragment {
 
         SQLiteDatabase db = ddbb.getReadableDatabase();
 
-        String[] camps = new String[] {"_id", "alias", "date", "result"};
+        //String[] camps = new String[] {"_id", "alias", "date", "result"};
+        String[] camps = new String[] {"_id", "alias", "date"};
         Cursor cursor = db.query("Partides", camps,null,null,null,null,null);
 
-        String[] from = new String[] {"alias", "date", "result"};
-        int [] to = new int[] {R.id.data1, R.id.data2, R.id.data3};
+        //String[] from = new String[] {"alias", "date", "result"};
+        String[] from = new String[] {"alias", "date"};
+        //int [] to = new int[] {R.id.data1, R.id.data2, R.id.data3};
+        int [] to = new int[] {R.id.data1, R.id.data2};
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(getContext(), R.layout.fragment_game_data, cursor, from, to, 0);
 

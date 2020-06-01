@@ -14,15 +14,28 @@
         tools:layout="@layout/fragment_list_old"
         android:layout_weight="1"
         />
-    <fragment
-        class="com.example.connect4.Old.FragmentDetail"
-        android:layout_height="match_parent"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/FrgDetailOLD"
-        tools:layout="@layout/fragment_detail_old"
-        android:layout_weight="1"
-        />
-
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <fragment
+            class="com.example.connect4.Old.FragmentDetail"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/FrgDetailOLD"
+            tools:layout="@layout/fragment_detail_old"
+            android:layout_weight="1"
+            />
+        <fragment
+            class="com.example.connect4.Old.ResulPFrag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/FrgResultOLD"
+            tools:layout="@layout/fragment_result_old"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
     <Button
         android:layout_width="180dp"
         android:layout_height="wrap_content"

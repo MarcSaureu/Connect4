@@ -41,8 +41,12 @@ public class AccessBDActivity extends AppCompatActivity implements FragmentList.
         FragmentDetail fragmentDetail = (FragmentDetail) getFragmentManager().findFragmentById(R.id.FrgDetailOLD);
         boolean isDetail = (fragmentDetail != null && fragmentDetail.isInLayout());
 
-        if(isDetail){
+        ResulPFrag resulPFrag = (ResulPFrag) getFragmentManager().findFragmentById(R.id.FrgResultOLD);
+        boolean isResult = (resulPFrag != null && resulPFrag.isInLayout());
+
+        if(isDetail && isResult){
             fragmentDetail.ViewGame(id);
+            resulPFrag.getImage(id);
         }else{
             Intent i = new Intent(this, DetailRegActivity.class);
             i.putExtra(getString(R.string.id_key), id);
